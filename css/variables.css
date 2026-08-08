@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary-color: #4F7CFF;
+    --primary-light: #7AA2FF;
+    --primary-dark: #2457F5;
+    --bg-color: #0E1117;
+    --surface-color: #171B22;
+    --surface-light: #202633;
+    --card-color: #1D2430;
+    --text-color: #FFFFFF;
+    --text-light: #CBD5E1;
+    --text-muted: #94A3B8;
+    --border-color: rgba(255, 255, 255, .08);
+    --glass-bg: rgba(255, 255, 255, .04);
+    --glass-border: rgba(255, 255, 255, .08);
+    --glass-blur: 18px;
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, .08);
+    --shadow-md: 0 12px 30px rgba(0, 0, 0, .15);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, .25);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 36px;
+    --radius-round: 999px;
+    --font-family: 'Inter', sans-serif;
+    --fs-h1: clamp(3rem, 7vw, 5rem);
+    --fs-h2: clamp(2.3rem, 5vw, 3.5rem);
+    --fs-h3: 1.75rem;
+    --fs-body: 1rem;
+    --fs-small: .9rem;
+    --space-1: .25rem;
+    --space-2: .5rem;
+    --space-3: .75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 5rem;
+    --transition: .35s ease;
+}
+
+[data-theme="light"] {
+    --bg-color: #F7F9FC;
+    --surface-color: #FFFFFF;
+    --surface-light: #F3F6FA;
+    --card-color: #FFFFFF;
+    --text-color: #101828;
+    --text-light: #344054;
+    --text-muted: #667085;
+    --border-color: rgba(0, 0, 0, .08);
+    --glass-bg: rgba(255, 255, 255, .65);
+    --glass-border: rgba(255, 255, 255, .8);
+}
+
+[data-color="blue"] {
+    --primary-color: #4F7CFF;
+    --primary-light: #7AA2FF;
+    --primary-dark: #2457F5;
+}
+
+[data-color="purple"] {
+    --primary-color: #7C4DFF;
+    --primary-light: #A277FF;
+    --primary-dark: #5E2BFF;
+}
+
+[data-color="green"] {
+    --primary-color: #14C38E;
+    --primary-light: #42D8AA;
+    --primary-dark: #0FA977;
+}
+
+[data-color="orange"] {
+    --primary-color: #FF8A00;
+    --primary-light: #FFB347;
+    --primary-dark: #E86F00;
+}
+
+[data-color="pink"] {
+    --primary-color: #FF4D8D;
+    --primary-light: #FF77A9;
+    --primary-dark: #E63778;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition:
+        background .35s ease,
+        color .35s ease;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+p {
+    font-size: var(--fs-body);
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: #fff;
+}
