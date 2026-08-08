@@ -1,31 +1,29 @@
-# Portfolio_js - Personal Developer Portfolio
+# Portfolio JS
 
-A responsive, high-performance personal portfolio website built with modern HTML5, CSS3, and JavaScript.
+A responsive personal portfolio website built with standard HTML, CSS, and JavaScript.
 
-## Features
+## Overview
 
-- **Responsive Design**: Mobile-first grid and flexbox layout adapting to all screen sizes.
-- **Component System**: Modular CSS architecture separating structural layout (`layout.css`) and UI components (`components.css`).
-- **Accessibility & UX**: Includes skip links, keyboard navigation support, and smooth scrolling indicators.
-- **Theme Support**: Styled UI controls for theme switching and interactive navigation.
+This project is a clean, modern portfolio site designed with a modular CSS architecture (separating layout, components, and responsive media queries) and mobile-friendly navigation.
 
 ## Project Structure
 
 ```text
-├── index.html          # Main HTML document
+├── index.html            # Main site markup
 ├── css/
-│   ├── layout.css      # Grid, flexbox, containers, and structural styles
-│   └── components.css  # Buttons, navigation, header, logo, and card styles
-├── js/                 # JavaScript scripts
-└── assets/             # Images and visual media assets
+│   ├── layout.css        # Base layout, variables, containers, and grid styles
+│   ├── components.css    # UI elements (buttons, navigation bar, logo, cards)
+│   └── responsive.css    # Media queries for tablet and mobile devices
+├── js/                   # Custom JavaScript logic
+└── assets/               # Images and icons
 ```
 
-## Getting Started
+## How to Run
 
-No build process or external dependencies required. 
+No build step or npm packages required.
 
-1. Clone the repository:
+1. Clone the repo:
    ```bash
    git clone https://github.com/sajanTomar/Portfolio_js.git
    ```
-2. Open `index.html` in your browser, or launch it using VS Code Live Server.
+2. Open `index.html` directly in your browser or run it with VS Code Live Server.
