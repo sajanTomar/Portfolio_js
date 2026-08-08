@@ -153,10 +153,131 @@ footer {
     align-items: center;
 }
 
-#about,
+#impact,
 #projects,
 #experience,
-#skills,
+#techstack,
 #contact {
     min-height: 70vh;
+}
+
+/* HERO LAYOUT */
+.hero {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    width: min(92%, 1400px);
+}
+
+.hero__wrapper {
+    display: grid;
+    grid-template-columns: 1fr .95fr;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    min-height: calc(100vh - 82px);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: .5rem;
+}
+
+.hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero__social {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.hero__highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.hero__visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 650px;
+}
+
+.workspace {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.workspace__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+}
+
+.workspace__controls {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.workspace__title {
+    flex: 1;
+    text-align: center;
+}
+
+.workspace__editor {
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.workspace__editor pre {
+    margin: 0;
+}
+
+.workspace__status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .85rem 1.25rem;
+}
+
+.achievement-card {
+    position: absolute;
+}
+
+.achievement-card--top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.achievement-card--left {
+    left: 0;
+    bottom: 120px;
+}
+
+.achievement-card--right {
+    right: 0;
+    top: 140px;
 }

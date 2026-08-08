@@ -4,22 +4,23 @@ A personal portfolio website built with HTML, CSS, and JavaScript.
 
 ## What's Included
 
-- **Modular CSS**: Organised into design tokens (`variables.css`), structure (`layout.css`), UI elements (`components.css`), and media queries (`responsive.css`).
+- **Hero Section**: Includes animated role typing, achievement stats, interactive code workspace widget, CTAs, and highlight badges.
+- **Modular CSS Architecture**: Organised into design tokens (`variables.css`), layout structure (`layout.css`), UI components (`components.css`), and media queries (`responsive.css`).
 - **Theme Variables**: Supports custom accent colors (blue, purple, green, orange, pink) and light/dark modes using CSS variables.
-- **Interactive JS**: Includes scroll progress bar, header scroll states, mobile menu toggle with keyboard support, scrollspy navigation, and smooth anchor scrolling.
+- **Interactive JS**: Features header scroll state, scroll progress bar, mobile drawer menu, scrollspy navigation, and smooth anchor links.
 
 ## Project Structure
 
 ```text
-├── index.html            # Main HTML document
+├── index.html            # Main HTML document with hero section
 ├── css/
-│   ├── variables.css     # CSS custom properties, color themes, and typography
-│   ├── layout.css        # Page layout, grid systems, and structural containers
-│   ├── components.css    # UI components (buttons, nav links, header, scrollbar)
+│   ├── variables.css     # CSS design tokens, color themes, and typography
+│   ├── layout.css        # Page layout, grid systems, hero container, and section wrappers
+│   ├── components.css    # UI components (hero badge, buttons, nav links, code workspace, achievement cards)
 │   └── responsive.css    # Breakpoint media queries
 ├── js/
-│   └── main.js           # Navigation, scroll progress, scrollspy, and mobile drawer logic
-└── assets/               # Static images and icons
+│   └── main.js           # Header scroll, mobile drawer toggle, scroll progress, and scrollspy logic
+└── assets/               # Static images, icons, and resume PDF
 ```
 
 ## Running Locally
@@ -30,4 +31,4 @@ No build tools or external dependencies needed.
    ```bash
    git clone https://github.com/sajanTomar/Portfolio_js.git
    ```
-2. Open `index.html` in any modern web browser or use VS Code Live Server.
+2. Open `index.html` in any modern web browser or run it with VS Code Live Server.
