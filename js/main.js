@@ -5,12 +5,17 @@ const mobileOverlay = document.querySelector(".mobile-overlay");
 const navLinks = document.querySelectorAll(".nav-link");
 const mobileNavLinks = document.querySelectorAll(".mobile-navigation a");
 const scrollProgress = document.querySelector(".scroll-progress");
+const sections = document.querySelectorAll("main section");
+const typingText = document.querySelector("#typingText");
 
+// MOBILE NAVIGATION
 function openMenu() {
     mobileNavigation.classList.add("active");
     mobileOverlay.classList.add("active");
     mobileMenuBtn.classList.add("active");
+
     mobileMenuBtn.setAttribute("aria-expanded", "true");
+
     document.body.style.overflow = "hidden";
 }
 
@@ -18,7 +23,9 @@ function closeMenu() {
     mobileNavigation.classList.remove("active");
     mobileOverlay.classList.remove("active");
     mobileMenuBtn.classList.remove("active");
+
     mobileMenuBtn.setAttribute("aria-expanded", "false");
+
     document.body.style.overflow = "";
 }
 
@@ -32,19 +39,18 @@ function toggleMenu() {
 
 mobileMenuBtn.addEventListener("click", toggleMenu);
 mobileOverlay.addEventListener("click", closeMenu);
+mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+});
 
+// ESCAPE KEY
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         closeMenu();
     }
 });
 
-mobileNavLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        closeMenu();
-    });
-});
-
+// HEADER SCROLL STATE
 function handleHeader() {
     if (window.scrollY > 20) {
         header.classList.add("scrolled");
@@ -53,20 +59,21 @@ function handleHeader() {
     }
 }
 
-window.addEventListener("scroll", handleHeader);
-
+// SCROLL PROGRESS
 function updateProgressBar() {
     const scrollTop = window.scrollY;
     const documentHeight =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
+    if (documentHeight <= 0) {
+        scrollProgress.style.width = "0%";
+        return;
+    }
     const progress = (scrollTop / documentHeight) * 100;
     scrollProgress.style.width = `${progress}%`;
 }
 
-window.addEventListener("scroll", updateProgressBar);
-const sections = document.querySelectorAll("main section");
-
+// ACTIVE NAVIGATION
 function updateActiveNavigation() {
     let currentSection = "";
     sections.forEach((section) => {
@@ -82,18 +89,24 @@ function updateActiveNavigation() {
 
     navLinks.forEach((link) => {
         link.classList.remove("active");
+
         if (link.getAttribute("href") === `#${currentSection}`) {
             link.classList.add("active");
         }
     });
 }
 
-window.addEventListener("scroll", updateActiveNavigation);
-
+// SMOOTH ANCHOR SCROLLING
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (event) {
-        const target = document.querySelector(this.getAttribute("href"));
-        if (!target) return;
+        const targetId = this.getAttribute("href");
+        if (!targetId || targetId === "#") {
+            return;
+        }
+        const target = document.querySelector(targetId);
+        if (!target) {
+            return;
+        }
         event.preventDefault();
         target.scrollIntoView({
             behavior: "smooth",
@@ -102,6 +115,71 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
+// HERO TYPING ANIMATION
+const roles = [
+    "React.js",
+    "TypeScript",
+    "Next.js",
+    "Node.js",
+    "Web Performance"
+];
+
+let roleIndex = 0;
+let characterIndex = 0;
+let isDeleting = false;
+
+const typingSpeed = 90;
+const deletingSpeed = 55;
+const pauseAfterTyping = 1400;
+const pauseAfterDeleting = 400;
+
+function typeRole() {
+    if (!typingText) {
+        return;
+    }
+
+    const currentRole = roles[roleIndex];
+
+    if (!isDeleting) {
+        characterIndex++;
+        typingText.textContent = currentRole.slice(0, characterIndex);
+        if (characterIndex === currentRole.length) {
+            isDeleting = true;
+            setTimeout(typeRole, pauseAfterTyping);
+            return;
+        }
+        setTimeout(typeRole, typingSpeed);
+        return;
+    }
+
+    characterIndex--;
+
+    typingText.textContent = currentRole.slice(0, characterIndex);
+
+    if (characterIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeRole, pauseAfterDeleting);
+        return;
+    }
+    setTimeout(typeRole, deletingSpeed);
+}
+
+// REDUCED MOTION
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (typingText && !prefersReducedMotion) {
+    typeRole();
+}
+
+// SCROLL EVENTS
+window.addEventListener("scroll", handleHeader);
+window.addEventListener("scroll", updateProgressBar);
+window.addEventListener("scroll", updateActiveNavigation);
+
+// INITIAL STATE
 window.addEventListener("load", () => {
     handleHeader();
     updateProgressBar();

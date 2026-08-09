@@ -1,9 +1,15 @@
+/* RESPONSIVE DESIGN */
 @media (max-width: 1400px) {
     .container {
         width: min(94%, 1280px);
     }
+
+    .hero__wrapper {
+        gap: 3rem;
+    }
 }
 
+/* LARGE TABLET / SMALL DESKTOP */
 @media (max-width: 1200px) {
     .nav-list {
         gap: 1.4rem;
@@ -12,8 +18,29 @@
     .resume-btn {
         min-width: 120px;
     }
+
+    .hero__title {
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+    }
+
+    .hero__visual {
+        min-height: 580px;
+    }
+
+    .workspace {
+        max-width: 520px;
+    }
+
+    .achievement-card--left {
+        left: -15px;
+    }
+
+    .achievement-card--right {
+        right: -15px;
+    }
 }
 
+/* TABLET */
 @media (max-width: 992px) {
     .desktop-nav {
         display: none;
@@ -26,8 +53,45 @@
     .header-actions {
         margin-left: auto;
     }
+
+    .hero__wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        min-height: auto;
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+    }
+
+    .hero__content {
+        max-width: 850px;
+    }
+
+    .hero__title {
+        max-width: 800px;
+    }
+
+    .hero__description {
+        max-width: 720px;
+    }
+
+    .hero__visual {
+        min-height: 620px;
+    }
+
+    .workspace {
+        max-width: 600px;
+    }
+
+    .achievement-card--left {
+        left: 5%;
+    }
+
+    .achievement-card--right {
+        right: 5%;
+    }
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
     .container {
         width: min(92%, 100%);
@@ -56,8 +120,103 @@
     section {
         padding-block: 5rem;
     }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero__wrapper {
+        gap: 3rem;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero__badge {
+        margin-bottom: .7rem;
+    }
+
+    .hero__title {
+        max-width: 100%;
+        font-size: clamp(2.6rem, 9vw, 4rem);
+        line-height: 1.04;
+    }
+
+    .hero__typing {
+        margin-top: 1.2rem;
+    }
+
+    .hero__description {
+        max-width: 100%;
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .hero__actions {
+        margin-top: 1.75rem;
+    }
+
+    .btn {
+        min-width: 160px;
+        height: 54px;
+        padding-inline: 1.5rem;
+    }
+
+    .hero__social {
+        margin-top: 1.75rem;
+    }
+
+    .hero__highlights {
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+    }
+
+    .hero__visual {
+        min-height: 520px;
+    }
+
+    .workspace {
+        max-width: 100%;
+    }
+
+    .workspace__editor {
+        padding: 1.5rem;
+    }
+
+    .workspace__editor pre {
+        font-size: .85rem;
+        line-height: 1.8;
+    }
+
+    .achievement-card {
+        min-width: 130px;
+        padding: .85rem 1rem;
+    }
+
+    .achievement-card__value {
+        font-size: 1.5rem;
+    }
+
+    .achievement-card__label {
+        font-size: .8rem;
+    }
+
+    .achievement-card--top {
+        top: -25px;
+    }
+
+    .achievement-card--left {
+        left: -5px;
+        bottom: 55px;
+    }
+
+    .achievement-card--right {
+        right: -5px;
+        top: 80px;
+    }
 }
 
+/* SMALL MOBILE */
 @media (max-width: 576px) {
     .container {
         width: calc(100% - 2rem);
@@ -91,8 +250,118 @@
         min-height: 56px;
         font-size: 1rem;
     }
+
+    .hero__wrapper {
+        padding-top: 1.5rem;
+    }
+
+    .hero__badge {
+        padding: .55rem .9rem;
+    }
+
+    .hero__badge-text {
+        font-size: .78rem;
+    }
+
+    .hero__title {
+        font-size: clamp(2.35rem, 11vw, 3.2rem);
+        letter-spacing: -.04em;
+    }
+
+    .hero__eyebrow {
+        font-size: .8rem;
+        letter-spacing: .06em;
+    }
+
+    .hero__typing {
+        font-size: .95rem;
+    }
+
+    .hero__description {
+        font-size: .95rem;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero__social {
+        gap: 1.1rem;
+    }
+
+    .hero__highlights {
+        gap: .75rem;
+    }
+
+    .hero__visual {
+        min-height: 430px;
+    }
+
+    .workspace {
+        border-radius: 18px;
+    }
+
+    .workspace__header {
+        padding: .85rem 1rem;
+    }
+
+    .workspace__title {
+        font-size: .8rem;
+    }
+
+    .workspace__editor {
+        padding: 1.1rem;
+    }
+
+    .workspace__editor pre {
+        font-size: .72rem;
+        line-height: 1.7;
+    }
+
+    .workspace__status {
+        padding: .75rem 1rem;
+    }
+
+    .workspace__status span {
+        font-size: .72rem;
+    }
+
+    .achievement-card {
+        min-width: 115px;
+        padding: .7rem .8rem;
+        border-radius: 14px;
+    }
+
+    .achievement-card__value {
+        font-size: 1.3rem;
+    }
+
+    .achievement-card__label {
+        margin-top: .3rem;
+        font-size: .7rem;
+    }
+
+    .achievement-card--top {
+        top: -20px;
+    }
+
+    .achievement-card--left {
+        left: -8px;
+        bottom: 35px;
+    }
+
+    .achievement-card--right {
+        right: -8px;
+        top: 60px;
+    }
 }
 
+/* EXTRA SMALL MOBILE */
 @media (max-width: 425px) {
     .logo-text {
         font-size: 1.1rem;
@@ -111,8 +380,25 @@
     .header-wrapper {
         min-height: 68px;
     }
+
+    .hero__title {
+        font-size: clamp(2.15rem, 11vw, 2.8rem);
+    }
+
+    .hero__visual {
+        min-height: 390px;
+    }
+
+    .achievement-card--left {
+        left: -10px;
+    }
+
+    .achievement-card--right {
+        right: -10px;
+    }
 }
 
+/* VERY SMALL DEVICES */
 @media (max-width: 360px) {
     .container {
         width: calc(100% - 1.25rem);
@@ -128,15 +414,31 @@
     .header-actions {
         gap: .35rem;
     }
+
+    .hero__title {
+        font-size: 2.05rem;
+    }
+
+    .hero__badge-text {
+        font-size: .72rem;
+    }
+
+    .hero__visual {
+        min-height: 360px;
+    }
 }
 
+/* LANDSCAPE MOBILE */
 @media (max-height: 500px) and (orientation: landscape) {
     .mobile-navigation {
         padding-top: 5rem;
-
     }
 
     .mobile-navigation a {
         min-height: 48px;
+    }
+
+    .hero__wrapper {
+        padding-top: 2rem;
     }
 }

@@ -4,10 +4,10 @@ A personal portfolio website built with HTML, CSS, and JavaScript.
 
 ## What's Included
 
-- **Hero Section**: Includes animated role typing, achievement stats, interactive code workspace widget, CTAs, and highlight badges.
-- **Modular CSS Architecture**: Organised into design tokens (`variables.css`), layout structure (`layout.css`), UI components (`components.css`), and media queries (`responsive.css`).
+- **Hero Section**: Staggered entrance animations, role typewriter effect, achievement stats, interactive code workspace widget, CTAs, and highlight badges.
+- **Modular CSS Architecture**: Organised into design tokens (`variables.css`), layout structure (`layout.css`), UI components (`components.css`), animations (`animations.css`), and media queries (`responsive.css`).
 - **Theme Variables**: Supports custom accent colors (blue, purple, green, orange, pink) and light/dark modes using CSS variables.
-- **Interactive JS**: Features header scroll state, scroll progress bar, mobile drawer menu, scrollspy navigation, and smooth anchor links.
+- **Interactive JS**: Features typewriter animation, header scroll states, scroll progress bar, mobile drawer menu, scrollspy navigation, and smooth anchor links.
 
 ## Project Structure
 
@@ -17,9 +17,10 @@ A personal portfolio website built with HTML, CSS, and JavaScript.
 │   ├── variables.css     # CSS design tokens, color themes, and typography
 │   ├── layout.css        # Page layout, grid systems, hero container, and section wrappers
 │   ├── components.css    # UI components (hero badge, buttons, nav links, code workspace, achievement cards)
+│   ├── animations.css    # Hero reveal animations, floating card keyframes, and typing cursor effect
 │   └── responsive.css    # Breakpoint media queries
 ├── js/
-│   └── main.js           # Header scroll, mobile drawer toggle, scroll progress, and scrollspy logic
+│   └── main.js           # Typewriter effect, header scroll, mobile drawer toggle, scroll progress, and scrollspy logic
 └── assets/               # Static images, icons, and resume PDF
 ```
 

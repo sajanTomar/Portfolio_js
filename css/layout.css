@@ -34,7 +34,7 @@ section {
 }
 
 section:first-child {
-    padding-top: 8rem;
+    padding-top: 2rem;
 }
 
 .site-header {
@@ -150,7 +150,7 @@ footer {
 #home {
     min-height: calc(100vh - 82px);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #impact,
@@ -178,8 +178,6 @@ footer {
     align-items: center;
     gap: clamp(2.5rem, 5vw, 5rem);
     min-height: calc(100vh - 82px);
-    padding-top: 1rem;
-    padding-bottom: 2rem;
 }
 
 .hero__content {

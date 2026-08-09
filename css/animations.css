@@ -1,0 +1,139 @@
+/* HERO ANIMATIONS */
+.hero__content>* {
+    opacity: 0;
+    animation: heroReveal .8s ease forwards;
+}
+
+.hero__badge {
+    animation-delay: .1s;
+}
+
+.hero__eyebrow {
+    animation-delay: .2s;
+}
+
+.hero__title {
+    animation-delay: .3s;
+}
+
+.hero__typing {
+    animation-delay: .4s;
+}
+
+.hero__description {
+    animation-delay: .5s;
+}
+
+.hero__actions {
+    animation-delay: .6s;
+}
+
+.hero__social {
+    animation-delay: .7s;
+}
+
+.hero__highlights {
+    animation-delay: .8s;
+}
+
+/* HERO VISUAL */
+.hero__visual {
+    opacity: 0;
+    animation: heroVisualReveal 1s ease .35s forwards;
+}
+
+/* ACHIEVEMENT CARDS */
+.achievement-card {
+    animation: floatingCard 5s ease-in-out infinite;
+}
+
+.achievement-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.achievement-card:nth-child(2) {
+    animation-delay: .8s;
+}
+
+.achievement-card:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+/* TYPING CURSOR */
+.hero__typing-text::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: .15rem;
+    background: var(--primary-color);
+    vertical-align: -.1em;
+    animation: typingCursor .8s steps(1) infinite;
+}
+
+/* KEYFRAMES */
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroVisualReveal {
+    from {
+        opacity: 0;
+        transform: translateX(40px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes floatingCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes typingCursor {
+
+    0%,
+    45% {
+        opacity: 1;
+    }
+
+    46%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero__content>*,
+    .hero__visual,
+    .achievement-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .hero__typing-text::after {
+        animation: none;
+        opacity: 1;
+    }
+}
