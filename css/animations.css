@@ -137,3 +137,24 @@
         opacity: 1;
     }
 }
+
+/* hero background motion */
+.hero::after {
+    animation: heroGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+    from {
+        transform: translate3d(0, 0, 0) scale(1)
+    }
+
+    to {
+        transform: translate3d(-30px, 20px, 0) scale(1.08);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero::after {
+        animation: none;
+    }
+}

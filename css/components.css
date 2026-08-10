@@ -537,3 +537,58 @@ img {
     right: -35px;
     top: 110px;
 }
+
+/* hero background system */
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.25) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.25) 1px,
+            transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, .9),
+            transparent 90%);
+    -webkit-mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, .9),
+            transparent 90%);
+    animation: fade-in-down .8s ease-out 0s 1 forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: -220px;
+    right: -180px;
+    width: 650px;
+    height: 650px;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            color-mix(in srgb, var(--primary-color) 14%, transparent),
+            transparent 68%);
+    filter: blur(10px);
+    opacity: .7;
+}
+
+.hero__content,
+.hero__visual {
+    position: relative;
+    z-index: 1;
+}
