@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 120px;
+    overflow-x: clip;
 }
 
 body {
@@ -14,7 +15,7 @@ body {
 }
 
 .container {
-    width: min(92%, 1400px);
+    width: min(94%, 1520px);
     margin-inline: auto;
 }
 
@@ -34,28 +35,31 @@ section {
 }
 
 section:first-child {
-    padding-top: 2rem;
+    padding-top: 0;
 }
 
+/* HEADER — floating rounded bar */
 .site-header {
     position: sticky;
     top: 0;
     inset-inline: 0;
     z-index: 1000;
+    padding-block: 1.25rem .5rem;
 }
 
 .header-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 82px;
+    min-height: 78px;
+    padding-inline: 1.5rem;
     gap: 2rem;
 }
 
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: .8rem;
+    gap: .55rem;
     flex-shrink: 0;
 }
 
@@ -68,7 +72,7 @@ section:first-child {
 .logo-text {
     display: flex;
     align-items: center;
-    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: 700;
 }
 
@@ -79,18 +83,17 @@ section:first-child {
 .nav-list {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 2vw, 2rem);
+    gap: clamp(1rem, 2.2vw, 2.4rem);
 }
 
 .header-actions {
     display: flex;
     align-items: center;
-    gap: .85rem;
+    gap: .5rem;
     flex-shrink: 0;
 }
 
-.theme-toggle,
-.theme-customizer-btn,
+.icon-btn,
 .mobile-menu-btn,
 .resume-btn {
     display: inline-flex;
@@ -111,7 +114,9 @@ section:first-child {
 .mobile-navigation {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
+    visibility: hidden;
     width: min(340px, 90vw);
     height: 100vh;
     z-index: 1200;
@@ -127,7 +132,7 @@ section:first-child {
 
 .mobile-navigation ul {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .mobile-overlay {
@@ -147,12 +152,6 @@ footer {
     position: relative;
 }
 
-#home {
-    min-height: calc(100vh - 82px);
-    display: flex;
-    align-items: flex-start;
-}
-
 #impact,
 #projects,
 #experience,
@@ -163,64 +162,74 @@ footer {
 
 /* HERO LAYOUT */
 .hero {
-    min-height: calc(100vh - 82px);
     display: flex;
     align-items: center;
-}
-
-.hero .container {
-    width: min(92%, 1400px);
+    padding-block: 1.5rem 4rem;
 }
 
 .hero__wrapper {
     display: grid;
-    grid-template-columns: 1fr .95fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
     align-items: center;
-    gap: clamp(2.5rem, 5vw, 5rem);
-    min-height: calc(100vh - 82px);
+    gap: clamp(1.5rem, 2.2vw, 2rem);
 }
 
 .hero__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: .5rem;
+    z-index: 2;
 }
 
 .hero__actions {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 2.25rem;
     flex-wrap: wrap;
+}
+
+.hero__connect {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
 }
 
 .hero__social {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: .75rem;
 }
 
 .hero__highlights {
     display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
-    margin-top: 2.5rem;
+    width: calc(100% + 8.5rem);
+    margin-top: 2.25rem;
 }
 
 .hero__visual {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-height: 650px;
+    justify-content: flex-end;
+    padding-right: 52px;
+    min-height: 640px;
 }
 
-.workspace {
+.hero__stage {
     position: relative;
     width: 100%;
-    max-width: 540px;
+    max-width: 700px;
+}
+
+/* WORKSPACE */
+.workspace {
+    position: relative;
+    z-index: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -229,53 +238,134 @@ footer {
 .workspace__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.25rem;
+    gap: 1rem;
+    padding: 0 1rem 0 1.15rem;
+    min-height: 46px;
 }
 
 .workspace__controls {
     display: flex;
     align-items: center;
     gap: .5rem;
+    flex-shrink: 0;
 }
 
-.workspace__title {
-    flex: 1;
-    text-align: center;
+.workspace__tabs {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    margin-inline: auto;
+}
+
+.workspace__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.workspace__header-actions {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    flex-shrink: 0;
+}
+
+.workspace__body {
+    display: grid;
+    grid-template-columns: 46px 178px minmax(0, 1fr);
+    min-height: 545px;
+}
+
+.workspace__activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .35rem;
+    padding-block: .85rem;
+}
+
+.workspace__activity-icon--bottom {
+    margin-top: auto;
+}
+
+.workspace__explorer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: .75rem;
+}
+
+.workspace__explorer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .9rem 1rem .55rem;
+}
+
+.file-tree {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-tree__item {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
 }
 
 .workspace__editor {
-    padding: 1.5rem;
-    overflow-x: auto;
+    overflow: hidden;
+    padding: .85rem 0 1rem;
 }
 
-.workspace__editor pre {
-    margin: 0;
+.code {
+    display: flex;
+    flex-direction: column;
+}
+
+.code__line {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
 }
 
 .workspace__status {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: .85rem 1.25rem;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1.1rem 0 152px;
+    min-height: 32px;
 }
 
+.workspace__status-group {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.workspace__status-item {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+}
+
+/* ACHIEVEMENT CARDS */
 .achievement-card {
     position: absolute;
+    z-index: 3;
 }
 
 .achievement-card--top {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 48%;
+    bottom: calc(100% - 8px);
 }
 
 .achievement-card--left {
-    left: 0;
-    bottom: 120px;
+    left: -78px;
+    bottom: 12px;
 }
 
 .achievement-card--right {
-    right: 0;
-    top: 140px;
+    right: -68px;
+    top: 23%;
 }

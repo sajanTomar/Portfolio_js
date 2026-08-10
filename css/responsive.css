@@ -1,42 +1,79 @@
 /* RESPONSIVE DESIGN */
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
     .container {
-        width: min(94%, 1280px);
+        width: min(94%, 1360px);
     }
 
     .hero__wrapper {
-        gap: 3rem;
+        gap: 2.5rem;
+    }
+
+    .workspace {
+        max-width: 660px;
+    }
+
+    .achievement-card {
+        min-width: 175px;
+    }
+
+    .achievement-card--left {
+        left: -24px;
+    }
+
+    .achievement-card--right {
+        right: -26px;
     }
 }
 
 /* LARGE TABLET / SMALL DESKTOP */
 @media (max-width: 1200px) {
     .nav-list {
-        gap: 1.4rem;
+        gap: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: .9rem;
     }
 
     .resume-btn {
         min-width: 120px;
     }
 
+    .header-wrapper {
+        padding-inline: 1.1rem;
+    }
+
     .hero__title {
-        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        font-size: clamp(2.4rem, 4.2vw, 3.6rem);
     }
 
     .hero__visual {
-        min-height: 580px;
+        min-height: 600px;
     }
 
     .workspace {
-        max-width: 520px;
+        max-width: 580px;
+    }
+
+    .workspace__body {
+        grid-template-columns: 42px 158px minmax(0, 1fr);
+        min-height: 420px;
+    }
+
+    .code {
+        font-size: .74rem;
+    }
+
+    .hero__highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .achievement-card--left {
-        left: -15px;
+        left: -12px;
     }
 
     .achievement-card--right {
-        right: -15px;
+        right: -14px;
     }
 }
 
@@ -55,19 +92,23 @@
     }
 
     .hero__wrapper {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 4rem;
-        min-height: auto;
-        padding-top: 3rem;
-        padding-bottom: 5rem;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
     }
 
     .hero__content {
         max-width: 850px;
     }
 
-    .hero__title {
-        max-width: 800px;
+    .hero__highlights {
+        width: 100%;
+    }
+
+    .hero__visual {
+        justify-content: center;
+        padding-right: 0;
     }
 
     .hero__description {
@@ -79,77 +120,68 @@
     }
 
     .workspace {
-        max-width: 600px;
+        max-width: 700px;
     }
 
     .achievement-card--left {
-        left: 5%;
+        left: 0;
     }
 
     .achievement-card--right {
-        right: 5%;
+        right: 0;
     }
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
     .container {
-        width: min(92%, 100%);
+        width: min(94%, 100%);
+    }
+
+    .site-header {
+        padding-block: .85rem 0;
     }
 
     .header-wrapper {
-        min-height: 72px;
+        min-height: 66px;
+        padding-inline: .9rem;
         gap: .75rem;
     }
 
     .logo-text {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
 
     .resume-btn {
         display: none;
     }
 
-    .theme-toggle,
-    .theme-customizer-btn,
+    .icon-btn,
     .mobile-menu-btn {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
     }
 
     section {
-        padding-block: 5rem;
-    }
-
-    .hero {
-        min-height: auto;
-    }
-
-    .hero__wrapper {
-        gap: 3rem;
-        padding-top: 2rem;
-        padding-bottom: 4rem;
+        padding-block: 4rem;
     }
 
     .hero__badge {
-        margin-bottom: .7rem;
+        margin-bottom: 1.2rem;
     }
 
     .hero__title {
-        max-width: 100%;
-        font-size: clamp(2.6rem, 9vw, 4rem);
-        line-height: 1.04;
+        font-size: clamp(2.2rem, 8.5vw, 3rem);
     }
 
     .hero__typing {
-        margin-top: 1.2rem;
+        font-size: 1rem;
     }
 
     .hero__description {
         max-width: 100%;
-        margin-top: 1rem;
-        font-size: 1rem;
-        line-height: 1.75;
+        font-size: .95rem;
+        line-height: 1.8;
     }
 
     .hero__actions {
@@ -157,13 +189,10 @@
     }
 
     .btn {
-        min-width: 160px;
-        height: 54px;
-        padding-inline: 1.5rem;
-    }
-
-    .hero__social {
-        margin-top: 1.75rem;
+        min-width: 170px;
+        height: 52px;
+        padding-inline: 1.4rem;
+        font-size: .95rem;
     }
 
     .hero__highlights {
@@ -172,25 +201,62 @@
     }
 
     .hero__visual {
-        min-height: 520px;
+        min-height: 460px;
+    }
+
+    .hero__stage {
+        max-width: 100%;
+    }
+
+    .hero__orbit {
+        display: none;
+    }
+
+    .workspace__body {
+        min-height: 300px;
     }
 
     .workspace {
         max-width: 100%;
     }
 
-    .workspace__editor {
-        padding: 1.5rem;
+    .workspace__body {
+        grid-template-columns: 38px minmax(0, 1fr);
+        min-height: 340px;
     }
 
-    .workspace__editor pre {
-        font-size: .85rem;
-        line-height: 1.8;
+    .workspace__explorer {
+        display: none;
+    }
+
+    .workspace__header-actions {
+        display: none;
+    }
+
+    .code {
+        font-size: .68rem;
+    }
+
+    .code__num {
+        width: 36px;
+        padding-right: .7rem;
+    }
+
+    .workspace__status {
+        padding-left: 1rem;
+    }
+
+    .workspace__status-group:first-child {
+        gap: .8rem;
+    }
+
+    .workspace__status-item:nth-child(n + 3) {
+        display: none;
     }
 
     .achievement-card {
-        min-width: 130px;
-        padding: .85rem 1rem;
+        min-width: 150px;
+        padding: .85rem .95rem;
     }
 
     .achievement-card__value {
@@ -198,44 +264,43 @@
     }
 
     .achievement-card__label {
-        font-size: .8rem;
+        font-size: .75rem;
+    }
+
+    .achievement-card__chart {
+        height: 24px;
+        margin-top: .5rem;
+    }
+
+    .achievement-card__chart--map {
+        height: 44px;
     }
 
     .achievement-card--top {
-        top: -25px;
+        left: auto;
+        right: 0;
+        bottom: calc(100% + 8px);
     }
 
     .achievement-card--left {
-        left: -5px;
-        bottom: 55px;
+        left: -8px;
+        bottom: 6px;
     }
 
     .achievement-card--right {
-        right: -5px;
-        top: 80px;
+        right: -8px;
+        top: 42%;
     }
 }
 
 /* SMALL MOBILE */
 @media (max-width: 576px) {
     .container {
-        width: calc(100% - 2rem);
+        width: calc(100% - 1.75rem);
     }
 
     .header-actions {
-        gap: .5rem;
-    }
-
-    .theme-toggle,
-    .theme-customizer-btn {
-        width: 42px;
-        height: 42px;
-        font-size: .95rem;
-    }
-
-    .mobile-menu-btn {
-        width: 42px;
-        height: 42px;
+        gap: .35rem;
     }
 
     .mobile-navigation {
@@ -246,39 +311,22 @@
         padding-inline: 1rem;
     }
 
-    .mobile-navigation a {
-        min-height: 56px;
-        font-size: 1rem;
-    }
-
-    .hero__wrapper {
-        padding-top: 1.5rem;
-    }
-
     .hero__badge {
-        padding: .55rem .9rem;
+        padding: .5rem .85rem;
     }
 
     .hero__badge-text {
-        font-size: .78rem;
-    }
-
-    .hero__title {
-        font-size: clamp(2.35rem, 11vw, 3.2rem);
-        letter-spacing: -.04em;
+        font-size: .76rem;
     }
 
     .hero__eyebrow {
-        font-size: .8rem;
-        letter-spacing: .06em;
+        font-size: .74rem;
+        letter-spacing: .09em;
     }
 
-    .hero__typing {
-        font-size: .95rem;
-    }
-
-    .hero__description {
-        font-size: .95rem;
+    .hero__title {
+        font-size: clamp(2rem, 10vw, 2.6rem);
+        letter-spacing: -.03em;
     }
 
     .hero__actions {
@@ -290,111 +338,65 @@
         width: 100%;
     }
 
-    .hero__social {
-        gap: 1.1rem;
-    }
-
-    .hero__highlights {
-        gap: .75rem;
+    .hero__connect {
+        flex-wrap: wrap;
+        gap: .85rem;
     }
 
     .hero__visual {
         min-height: 430px;
     }
 
-    .workspace {
-        border-radius: 18px;
+    .code {
+        font-size: .6rem;
     }
 
-    .workspace__header {
-        padding: .85rem 1rem;
-    }
-
-    .workspace__title {
-        font-size: .8rem;
-    }
-
-    .workspace__editor {
-        padding: 1.1rem;
-    }
-
-    .workspace__editor pre {
+    .workspace__tab {
         font-size: .72rem;
-        line-height: 1.7;
+        padding-inline: .6rem;
     }
 
     .workspace__status {
-        padding: .75rem 1rem;
-    }
-
-    .workspace__status span {
-        font-size: .72rem;
+        font-size: .64rem;
     }
 
     .achievement-card {
-        min-width: 115px;
+        min-width: 122px;
         padding: .7rem .8rem;
-        border-radius: 14px;
+        border-radius: 13px;
     }
 
     .achievement-card__value {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
 
     .achievement-card__label {
         margin-top: .3rem;
-        font-size: .7rem;
-    }
-
-    .achievement-card--top {
-        top: -20px;
-    }
-
-    .achievement-card--left {
-        left: -8px;
-        bottom: 35px;
-    }
-
-    .achievement-card--right {
-        right: -8px;
-        top: 60px;
+        font-size: .68rem;
     }
 }
 
 /* EXTRA SMALL MOBILE */
 @media (max-width: 425px) {
     .logo-text {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
 
     .logo-icon {
-        width: 42px;
-        height: 42px;
-    }
-
-    .logo-icon svg {
-        width: 26px;
-        height: 26px;
-    }
-
-    .header-wrapper {
-        min-height: 68px;
+        width: 32px;
+        height: 32px;
     }
 
     .hero__title {
-        font-size: clamp(2.15rem, 11vw, 2.8rem);
+        font-size: clamp(1.85rem, 10vw, 2.3rem);
     }
 
     .hero__visual {
         min-height: 390px;
     }
 
-    .achievement-card--left {
-        left: -10px;
-    }
-
-    .achievement-card--right {
-        right: -10px;
+    .achievement-card__chart--map {
+        display: none;
     }
 }
 
@@ -404,23 +406,14 @@
         width: calc(100% - 1.25rem);
     }
 
-    .theme-toggle,
-    .theme-customizer-btn,
+    .icon-btn,
     .mobile-menu-btn {
-        width: 40px;
-        height: 40px;
-    }
-
-    .header-actions {
-        gap: .35rem;
+        width: 38px;
+        height: 38px;
     }
 
     .hero__title {
-        font-size: 2.05rem;
-    }
-
-    .hero__badge-text {
-        font-size: .72rem;
+        font-size: 1.8rem;
     }
 
     .hero__visual {
@@ -435,10 +428,6 @@
     }
 
     .mobile-navigation a {
-        min-height: 48px;
-    }
-
-    .hero__wrapper {
-        padding-top: 2rem;
+        min-height: 46px;
     }
 }

@@ -28,7 +28,7 @@
     animation-delay: .6s;
 }
 
-.hero__social {
+.hero__connect {
     animation-delay: .7s;
 }
 
@@ -44,19 +44,24 @@
 
 /* ACHIEVEMENT CARDS */
 .achievement-card {
-    animation: floatingCard 5s ease-in-out infinite;
+    animation: floatingCard 6s ease-in-out infinite;
 }
 
-.achievement-card:nth-child(1) {
+.achievement-card--top {
     animation-delay: 0s;
 }
 
-.achievement-card:nth-child(2) {
-    animation-delay: .8s;
+.achievement-card--right {
+    animation-delay: 1s;
 }
 
-.achievement-card:nth-child(3) {
-    animation-delay: 1.6s;
+.achievement-card--left {
+    animation-delay: 2s;
+}
+
+/* ORBIT */
+.hero__orbit {
+    animation: orbitSpin 90s linear infinite;
 }
 
 /* TYPING CURSOR */
@@ -104,7 +109,17 @@
     }
 
     50% {
-        transform: translateY(-8px);
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes orbitSpin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
@@ -121,40 +136,41 @@
     }
 }
 
+/* hero background motion */
+.hero::after {
+    animation: heroGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(-40px, 30px, 0) scale(1.08);
+    }
+}
+
 /* ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
 
     .hero__content>*,
     .hero__visual,
-    .achievement-card {
+    .achievement-card,
+    .hero__orbit,
+    .hero::after {
         animation: none;
         opacity: 1;
+    }
+
+    .hero__content>*,
+    .hero__visual,
+    .achievement-card {
         transform: none;
     }
 
     .hero__typing-text::after {
         animation: none;
         opacity: 1;
-    }
-}
-
-/* hero background motion */
-.hero::after {
-    animation: heroGlow 8s ease-in-out infinite alternate;
-}
-
-@keyframes heroGlow {
-    from {
-        transform: translate3d(0, 0, 0) scale(1)
-    }
-
-    to {
-        transform: translate3d(-30px, 20px, 0) scale(1.08);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero::after {
-        animation: none;
     }
 }

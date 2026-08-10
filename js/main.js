@@ -7,6 +7,25 @@ const mobileNavLinks = document.querySelectorAll(".mobile-navigation a");
 const scrollProgress = document.querySelector(".scroll-progress");
 const sections = document.querySelectorAll("main section");
 const typingText = document.querySelector("#typingText");
+const themeToggle = document.querySelector("#themeToggle");
+
+// THEME TOGGLE
+const storedTheme = localStorage.getItem("theme");
+
+if (storedTheme) {
+    document.documentElement.setAttribute("data-theme", storedTheme);
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const isLight =
+            document.documentElement.getAttribute("data-theme") === "light";
+        const nextTheme = isLight ? "dark" : "light";
+
+        document.documentElement.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+    });
+}
 
 // MOBILE NAVIGATION
 function openMenu() {
@@ -117,8 +136,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 // HERO TYPING ANIMATION
 const roles = [
-    "React.js",
     "TypeScript",
+    "React.js",
     "Next.js",
     "Node.js",
     "Web Performance"

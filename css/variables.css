@@ -1,34 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
 
 :root {
-    --primary-color: #4F7CFF;
-    --primary-light: #7AA2FF;
-    --primary-dark: #2457F5;
-    --bg-color: #0E1117;
-    --surface-color: #171B22;
-    --surface-light: #202633;
-    --card-color: #1D2430;
+    --primary-color: #3B82F6;
+    --primary-light: #60A5FA;
+    --primary-dark: #2563EB;
+
+    --bg-color: #05070D;
+    --bg-elevated: #0A0E17;
+    --surface-color: #0D1117;
+    --surface-light: #12161F;
+    --card-color: #0E1219;
+
     --text-color: #FFFFFF;
-    --text-light: #CBD5E1;
-    --text-muted: #94A3B8;
-    --border-color: rgba(255, 255, 255, .08);
-    --glass-bg: rgba(255, 255, 255, .04);
-    --glass-border: rgba(255, 255, 255, .08);
-    --glass-blur: 18px;
-    --shadow-sm: 0 4px 10px rgba(0, 0, 0, .08);
-    --shadow-md: 0 12px 30px rgba(0, 0, 0, .15);
-    --shadow-lg: 0 20px 60px rgba(0, 0, 0, .25);
+    --text-light: #B4BDCC;
+    --text-muted: #7B879B;
+
+    --border-color: rgba(255, 255, 255, .07);
+    --glass-bg: rgba(255, 255, 255, .025);
+    --glass-border: rgba(255, 255, 255, .07);
+    --glass-blur: 20px;
+
+    /* editor palette */
+    --editor-bg: #0B0F17;
+    --editor-panel: #0A0D14;
+    --editor-border: rgba(255, 255, 255, .06);
+    --editor-text: #D4D4D4;
+    --editor-line: #4B5566;
+
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, .18);
+    --shadow-md: 0 12px 30px rgba(0, 0, 0, .3);
+    --shadow-lg: 0 30px 80px rgba(0, 0, 0, .5);
+
     --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
-    --radius-xl: 36px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 26px;
     --radius-round: 999px;
-    --font-family: 'Inter', sans-serif;
+
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
     --fs-h1: clamp(3rem, 7vw, 5rem);
     --fs-h2: clamp(2.3rem, 5vw, 3.5rem);
     --fs-h3: 1.75rem;
     --fs-body: 1rem;
     --fs-small: .9rem;
+
     --space-1: .25rem;
     --space-2: .5rem;
     --space-3: .75rem;
@@ -38,26 +67,28 @@
     --space-7: 3rem;
     --space-8: 4rem;
     --space-9: 5rem;
+
     --transition: .35s ease;
 }
 
 [data-theme="light"] {
     --bg-color: #F7F9FC;
+    --bg-elevated: #FFFFFF;
     --surface-color: #FFFFFF;
     --surface-light: #F3F6FA;
     --card-color: #FFFFFF;
     --text-color: #101828;
-    --text-light: #344054;
+    --text-light: #475467;
     --text-muted: #667085;
-    --border-color: rgba(0, 0, 0, .08);
-    --glass-bg: rgba(255, 255, 255, .65);
-    --glass-border: rgba(255, 255, 255, .8);
+    --border-color: rgba(16, 24, 40, .1);
+    --glass-bg: rgba(255, 255, 255, .7);
+    --glass-border: rgba(16, 24, 40, .08);
 }
 
 [data-color="blue"] {
-    --primary-color: #4F7CFF;
-    --primary-light: #7AA2FF;
-    --primary-dark: #2457F5;
+    --primary-color: #3B82F6;
+    --primary-light: #60A5FA;
+    --primary-dark: #2563EB;
 }
 
 [data-color="purple"] {
@@ -92,6 +123,8 @@ body {
     font-family: var(--font-family);
     background: var(--bg-color);
     color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     transition:
         background .35s ease,
         color .35s ease;
