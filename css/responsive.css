@@ -138,13 +138,8 @@
         width: min(94%, 100%);
     }
 
-    .site-header {
-        padding-block: .85rem 0;
-    }
-
     .header-wrapper {
-        min-height: 66px;
-        padding-inline: .9rem;
+        min-height: 64px;
         gap: .75rem;
     }
 

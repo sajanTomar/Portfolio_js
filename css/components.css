@@ -49,24 +49,28 @@ svg {
 }
 
 /* ===== HEADER ===== */
-.site-header .header-wrapper {
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    background: rgba(13, 17, 25, .72);
+.site-header {
+    background: rgba(13, 17, 25, .75);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
-    box-shadow: 0 10px 40px rgba(0, 0, 0, .35);
+    border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
-.site-header.scrolled .header-wrapper {
-    background: rgba(13, 17, 25, .92);
-    box-shadow: 0 14px 46px rgba(0, 0, 0, .5);
+.site-header.scrolled {
+    background: rgba(13, 17, 25, .95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+    border-bottom-color: rgba(255, 255, 255, .12);
 }
 
-[data-theme="light"] .site-header .header-wrapper {
-    background: rgba(255, 255, 255, .8);
-    box-shadow: 0 10px 40px rgba(16, 24, 40, .08);
+[data-theme="light"] .site-header {
+    background: rgba(255, 255, 255, .85);
+    border-bottom-color: rgba(0, 0, 0, .08);
+}
+
+[data-theme="light"] .site-header.scrolled {
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
 }
 
 .logo {

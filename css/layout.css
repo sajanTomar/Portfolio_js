@@ -38,21 +38,22 @@ section:first-child {
     padding-top: 0;
 }
 
-/* HEADER — floating rounded bar */
+/* HEADER — Sticky Full-Width Bar */
 .site-header {
     position: sticky;
     top: 0;
-    inset-inline: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
-    padding-block: 1.25rem .5rem;
+    padding-block: 0;
 }
 
 .header-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 78px;
-    padding-inline: 1.5rem;
+    min-height: 72px;
     gap: 2rem;
 }
 
