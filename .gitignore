@@ -1,3 +1,7 @@
 .DS_Store
 *.log
 .vscode/
+
+# Local interview notes & masterclass docs (keep local only)
+*_Interview_Masterclass.md
+docs/
