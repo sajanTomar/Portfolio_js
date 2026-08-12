@@ -1,12 +1,10 @@
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 120px;
-    overflow-x: clip;
+    scroll-padding-top: 96px;
 }
 
 body {
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 .site-wrapper {
@@ -38,9 +36,9 @@ section:first-child {
     padding-top: 0;
 }
 
-/* HEADER — Sticky Full-Width Bar */
+/* HEADER — Fixed Full-Width Bar */
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -53,7 +51,7 @@ section:first-child {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 72px;
+    min-height: 76px;
     gap: 2rem;
 }
 
@@ -147,6 +145,7 @@ section:first-child {
 main {
     position: relative;
     isolation: isolate;
+    padding-top: 76px;
 }
 
 footer {
@@ -165,7 +164,7 @@ footer {
 .hero {
     display: flex;
     align-items: center;
-    padding-block: 1.5rem 4rem;
+    padding-block: 2.5rem 5.5rem;
 }
 
 .hero__wrapper {
