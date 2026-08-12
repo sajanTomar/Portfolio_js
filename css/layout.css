@@ -122,7 +122,7 @@ section:first-child {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    padding-top: 6rem;
+    padding-top: 0;
 }
 
 .mobile-navigation nav {

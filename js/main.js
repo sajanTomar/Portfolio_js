@@ -56,8 +56,13 @@ function toggleMenu() {
     }
 }
 
+const mobileMenuCloseBtn = document.querySelector("#mobileMenuCloseBtn");
+
 mobileMenuBtn.addEventListener("click", toggleMenu);
 mobileOverlay.addEventListener("click", closeMenu);
+if (mobileMenuCloseBtn) {
+    mobileMenuCloseBtn.addEventListener("click", closeMenu);
+}
 mobileNavLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
 });
