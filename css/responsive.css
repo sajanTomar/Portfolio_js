@@ -444,111 +444,170 @@
 
 @media (max-width: 768px) {
     .impact {
-        padding-block: 4rem;
+        padding-block: 3rem;
     }
 
     .impact__header {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
     }
 
     .impact__title {
-        font-size: clamp(2.1rem, 8.5vw, 3.2rem);
+        font-size: clamp(1.8rem, 7.5vw, 2.8rem);
     }
 
     .impact__description {
-        margin-top: 1rem;
-        font-size: .96rem;
+        margin-top: .75rem;
+        font-size: .88rem;
+        line-height: 1.55;
     }
 
     .impact__metrics {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: .65rem;
+    }
+
+    .desc-full {
+        display: none;
+    }
+
+    .desc-short {
+        display: inline;
     }
 
     .impact-card {
-        padding: 1.35rem 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: .85rem;
+        padding: .75rem 1rem;
+        border-radius: 16px;
     }
 
     .impact-card__icon {
-        margin-bottom: 1.2rem;
+        margin-bottom: 0;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+    }
+
+    .impact-card__content {
+        display: flex;
+        flex-direction: column;
+        gap: .08rem;
     }
 
     .impact-card__value {
-        font-size: clamp(2.4rem, 10vw, 3.6rem);
+        font-size: 1.45rem;
+        margin-bottom: 0;
+        line-height: 1.15;
+    }
+
+    .impact-card:nth-child(1) .impact-card__value,
+    .impact-card:nth-child(2) .impact-card__value,
+    .impact-card:nth-child(3) .impact-card__value {
+        color: #3B82F6;
+    }
+
+    .impact-card:nth-child(4) .impact-card__value {
+        color: #22C55E;
+    }
+
+    .impact-card:nth-child(5) .impact-card__value {
+        color: #A855F7;
+    }
+
+    .impact-card:nth-child(6) .impact-card__value {
+        color: #F59E0B;
+    }
+
+    .impact-card__title {
+        font-size: .88rem;
+        margin-bottom: 0;
+        line-height: 1.2;
+    }
+
+    .impact-card__description {
+        font-size: .78rem;
+        line-height: 1.35;
     }
 
     .impact__principles {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-top: 1rem;
+        gap: .65rem;
+        margin-top: .65rem;
+    }
+
+    .impact__principle {
+        display: none;
     }
 
     .impact__quote {
         grid-column: auto;
+        padding: 1rem 1.15rem;
+        border-radius: 14px;
+    }
+
+    .impact__quote-mark {
+        font-size: 2.2rem;
+    }
+
+    .impact__quote p {
+        font-size: .82rem;
+        line-height: 1.45;
     }
 }
 
 @media (max-width: 576px) {
     .impact {
-        padding-block: 3.5rem;
+        padding-block: 2.5rem;
     }
 
     .section-label--pill {
-        font-size: .7rem;
-        padding: .3rem .95rem;
+        font-size: .68rem;
+        padding: .28rem .85rem;
     }
 
     .impact__title {
-        font-size: clamp(2rem, 9.5vw, 2.6rem);
+        font-size: clamp(1.7rem, 8vw, 2.3rem);
         line-height: 1.1;
     }
 
     .impact__description {
-        font-size: .9rem;
-    }
-
-    .impact-card {
-        border-radius: 18px;
-        padding: 1.25rem 1.25rem 1.4rem;
-    }
-
-    .impact-card__value {
-        font-size: clamp(2.2rem, 12vw, 3.2rem);
-    }
-
-    .impact-card__title {
-        font-size: 1rem;
-    }
-
-    .impact-card__description {
         font-size: .85rem;
     }
 
-    .impact__quote,
-    .impact__principle {
-        padding: 1.1rem 1.25rem;
-        border-radius: 14px;
+    .impact-card {
+        padding: .65rem .9rem;
     }
 
-    .impact__quote-mark {
-        font-size: 2.4rem;
+    .impact-card__value {
+        font-size: 1.35rem;
     }
 
-    .impact__quote p {
-        font-size: .86rem;
+    .impact-card__title {
+        font-size: .85rem;
+    }
+
+    .impact-card__description {
+        font-size: .75rem;
     }
 }
 
 @media (max-width: 375px) {
     .impact__title {
-        font-size: 1.95rem;
+        font-size: 1.65rem;
     }
 
     .impact-card {
-        padding: 1.1rem;
+        padding: .6rem .8rem;
+        gap: .65rem;
+    }
+
+    .impact-card__icon {
+        width: 38px;
+        height: 38px;
     }
 
     .impact-card__value {
-        font-size: 2.3rem;
+        font-size: 1.25rem;
     }
 }

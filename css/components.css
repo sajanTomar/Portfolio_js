@@ -1012,6 +1012,10 @@ svg {
     line-height: 1.55;
 }
 
+.desc-short {
+    display: none;
+}
+
 .badge-red {
     color: #EF4444;
     font-weight: 700;
