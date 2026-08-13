@@ -854,7 +854,7 @@ svg {
 .impact {
     position: relative;
     overflow: hidden;
-    padding-block: clamp(3.5rem, 6vw, 6rem);
+    padding-block: clamp(2rem, 3.5vw, 3.5rem);
 }
 
 .impact::before {
@@ -876,23 +876,23 @@ svg {
     text-align: center;
     margin-inline: auto;
     max-width: 780px;
-    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
 }
 
 .section-label--pill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: .35rem 1.15rem;
+    padding: .3rem 1.05rem;
     border-radius: 100px;
-    font-size: .75rem;
+    font-size: .72rem;
     font-weight: 700;
     letter-spacing: .14em;
     color: #3B82F6;
     background: rgba(59, 130, 246, .08);
     border: 1px solid rgba(59, 130, 246, .24);
     box-shadow: 0 0 16px rgba(59, 130, 246, .12);
-    margin-bottom: 1.25rem;
+    margin-bottom: .65rem;
 }
 
 .section-label--pill::before {
@@ -901,8 +901,8 @@ svg {
 
 .impact__title {
     margin: 0 auto;
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-    line-height: 1.06;
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    line-height: 1.08;
     letter-spacing: -.04em;
     font-weight: 800;
     color: #FFFFFF;
@@ -913,24 +913,27 @@ svg {
 }
 
 .impact__description {
-    margin: 1.1rem auto 0;
+    margin: .65rem auto 0;
     max-width: 620px;
     color: var(--text-muted);
-    font-size: clamp(.95rem, 1.2vw, 1.08rem);
-    line-height: 1.65;
+    font-size: clamp(.88rem, 1vw, .96rem);
+    line-height: 1.5;
 }
 
 .impact__metrics {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
 .impact-card {
     position: relative;
-    padding: 1.75rem 1.75rem 2rem;
-    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    padding: 1.25rem 1.4rem;
+    border-radius: 18px;
     background: rgba(13, 17, 23, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(20px);
@@ -939,7 +942,7 @@ svg {
 }
 
 .impact-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     border-color: rgba(59, 130, 246, 0.38);
     background: rgba(18, 24, 34, 0.85);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 20px rgba(59, 130, 246, 0.08);
@@ -949,10 +952,10 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     flex-shrink: 0;
 }
 
@@ -987,29 +990,49 @@ svg {
 }
 
 .impact-card__content {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
 }
 
 .impact-card__value {
-    font-size: clamp(2.4rem, 3.8vw, 3.4rem);
+    font-size: 1.75rem;
     font-weight: 800;
-    letter-spacing: -.04em;
-    line-height: 1;
-    color: #FFFFFF;
-    margin-bottom: .65rem;
+    letter-spacing: -.03em;
+    line-height: 1.1;
+    margin-bottom: 0;
+}
+
+.impact-card:nth-child(1) .impact-card__value,
+.impact-card:nth-child(2) .impact-card__value,
+.impact-card:nth-child(3) .impact-card__value {
+    color: #3B82F6;
+}
+
+.impact-card:nth-child(4) .impact-card__value {
+    color: #22C55E;
+}
+
+.impact-card:nth-child(5) .impact-card__value {
+    color: #A855F7;
+}
+
+.impact-card:nth-child(6) .impact-card__value {
+    color: #F59E0B;
 }
 
 .impact-card__title {
-    font-size: 1.05rem;
+    font-size: .95rem;
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: .45rem;
+    margin-bottom: .15rem;
+    line-height: 1.25;
 }
 
 .impact-card__description {
-    font-size: .88rem;
+    font-size: .82rem;
     color: var(--text-muted);
-    line-height: 1.55;
+    line-height: 1.45;
 }
 
 .desc-short {
@@ -1035,22 +1058,22 @@ svg {
 .impact__principles {
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 1.25rem;
-    margin-top: 1.25rem;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .impact__quote {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    border-radius: 16px;
+    gap: .85rem;
+    padding: .9rem 1.25rem;
+    border-radius: 14px;
     background: rgba(13, 17, 23, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .impact__quote-mark {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1;
     color: #3B82F6;
     font-weight: 800;
@@ -1059,32 +1082,32 @@ svg {
 
 .impact__quote p {
     margin: 0;
-    font-size: .88rem;
+    font-size: .82rem;
     color: var(--text-light);
-    line-height: 1.5;
+    line-height: 1.45;
 }
 
 .impact__principle {
     display: flex;
     align-items: center;
-    gap: .85rem;
-    padding: 1.1rem 1.25rem;
-    border-radius: 16px;
+    gap: .75rem;
+    padding: .85rem 1.1rem;
+    border-radius: 14px;
     background: rgba(13, 17, 23, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .impact__principle h3 {
-    font-size: .92rem;
+    font-size: .88rem;
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: .2rem;
+    margin-bottom: .15rem;
 }
 
 .impact__principle p {
-    font-size: .78rem;
+    font-size: .75rem;
     color: var(--text-muted);
-    line-height: 1.4;
+    line-height: 1.35;
     margin: 0;
 }
 
