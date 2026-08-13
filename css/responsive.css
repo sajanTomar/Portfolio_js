@@ -429,7 +429,6 @@
 
 /* IMPACT RESPONSIVE */
 @media (max-width: 1200px) {
-
     .impact__metrics {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -441,105 +440,80 @@
     .impact__quote {
         grid-column: 1 / -1;
     }
-
 }
 
 @media (max-width: 768px) {
-
     .impact {
-        padding-block: 5rem;
+        padding-block: 4rem;
     }
 
     .impact__header {
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
     }
 
     .impact__title {
-        max-width: 600px;
-        font-size: clamp(2.4rem, 9vw, 3.5rem);
+        font-size: clamp(2.1rem, 8.5vw, 3.2rem);
     }
 
     .impact__description {
-        margin-top: 1.25rem;
-        font-size: 1rem;
-        line-height: 1.7;
+        margin-top: 1rem;
+        font-size: .96rem;
     }
 
     .impact__metrics {
         grid-template-columns: 1fr;
-        gap: .85rem;
-    }
-
-    .impact-card,
-    .impact-card--performance,
-    .impact-card--users,
-    .impact-card--global,
-    .impact-card--velocity {
-        min-height: auto;
+        gap: 1rem;
     }
 
     .impact-card {
-        padding: 1.5rem;
+        padding: 1.35rem 1.4rem;
     }
 
     .impact-card__icon {
-        margin-bottom: 2rem;
+        margin-bottom: 1.2rem;
     }
 
-    .impact-card__value,
-    .impact-card--performance .impact-card__value {
-        font-size: clamp(3rem, 15vw, 4.5rem);
-    }
-
-    .impact-card__description {
-        max-width: 100%;
+    .impact-card__value {
+        font-size: clamp(2.4rem, 10vw, 3.6rem);
     }
 
     .impact__principles {
         grid-template-columns: 1fr;
-        gap: .85rem;
-        margin-top: .85rem;
+        gap: 1rem;
+        margin-top: 1rem;
     }
 
     .impact__quote {
         grid-column: auto;
     }
-
 }
 
 @media (max-width: 576px) {
-
     .impact {
-        padding-block: 4.5rem;
+        padding-block: 3.5rem;
     }
 
-    .section-label {
-        font-size: .72rem;
-        letter-spacing: .12em;
-    }
-
-    .section-label::before {
-        width: 22px;
+    .section-label--pill {
+        font-size: .7rem;
+        padding: .3rem .95rem;
     }
 
     .impact__title {
-        font-size: clamp(2.2rem, 10vw, 3rem);
-        line-height: 1;
-        letter-spacing: -.04em;
+        font-size: clamp(2rem, 9.5vw, 2.6rem);
+        line-height: 1.1;
     }
 
     .impact__description {
-        font-size: .95rem;
+        font-size: .9rem;
     }
 
     .impact-card {
-        border-radius: 20px;
-        padding: 1.35rem;
+        border-radius: 18px;
+        padding: 1.25rem 1.25rem 1.4rem;
     }
 
-    .impact-card__value,
-    .impact-card--performance .impact-card__value {
-        font-size: clamp(2.8rem, 16vw, 4rem);
+    .impact-card__value {
+        font-size: clamp(2.2rem, 12vw, 3.2rem);
     }
 
     .impact-card__title {
@@ -547,44 +521,34 @@
     }
 
     .impact-card__description {
-        font-size: .88rem;
-        line-height: 1.6;
+        font-size: .85rem;
     }
 
     .impact__quote,
     .impact__principle {
-        min-height: auto;
-        padding: 1.25rem;
-    }
-
-    .impact__quote {
-        align-items: flex-start;
+        padding: 1.1rem 1.25rem;
+        border-radius: 14px;
     }
 
     .impact__quote-mark {
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
 
     .impact__quote p {
-        font-size: .92rem;
+        font-size: .86rem;
     }
 }
 
 @media (max-width: 375px) {
     .impact__title {
-        font-size: 2.1rem;
+        font-size: 1.95rem;
     }
 
     .impact-card {
-        padding: 1.15rem;
+        padding: 1.1rem;
     }
 
-    .impact-card__value,
-    .impact-card--performance .impact-card__value {
-        font-size: 2.7rem;
-    }
-
-    .impact__principle {
-        gap: .75rem;
+    .impact-card__value {
+        font-size: 2.3rem;
     }
 }

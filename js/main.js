@@ -222,6 +222,105 @@ function initScrollReveal() {
     }
 }
 
+const impactSection = document.querySelector("#impact");
+
+function setupImpactReveal() {
+    if (!impactSection) {
+        return;
+    }
+
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+        impactSection.classList.add("is-visible");
+        return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        impactSection.classList.add("is-visible");
+        return;
+    }
+
+    const impactObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add("is-visible");
+
+                startMetricCounters();
+
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -80px 0px"
+        }
+    );
+
+    impactObserver.observe(impactSection);
+}
+
+
+/* =========================================================
+   IMPACT METRIC COUNTERS
+   ========================================================= */
+
+const metricNumbers = document.querySelectorAll(
+    ".impact-card__number"
+);
+
+function startMetricCounters() {
+    if (!metricNumbers.length) {
+        return;
+    }
+
+    metricNumbers.forEach((metric) => {
+        animateMetric(metric);
+    });
+}
+
+function animateMetric(metric) {
+    const target = Number(metric.dataset.target);
+    const decimals = Number(metric.dataset.decimals) || 0;
+
+    if (Number.isNaN(target)) {
+        return;
+    }
+
+    const duration = 1600;
+    const startTime = performance.now();
+
+    function updateMetric(currentTime) {
+        const elapsedTime = currentTime - startTime;
+
+        const progress = Math.min(
+            elapsedTime / duration,
+            1
+        );
+
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+        const currentValue =
+            target * easedProgress;
+
+        metric.textContent = currentValue.toFixed(decimals);
+
+        if (progress < 1) {
+            requestAnimationFrame(updateMetric);
+        } else {
+            metric.textContent = target.toFixed(decimals);
+        }
+    }
+
+    requestAnimationFrame(updateMetric);
+}
+
 // SCROLL EVENTS
 window.addEventListener("scroll", handleHeader);
 window.addEventListener("scroll", updateProgressBar);
@@ -233,4 +332,6 @@ window.addEventListener("load", () => {
     updateProgressBar();
     updateActiveNavigation();
     initScrollReveal();
+    setupImpactReveal();
 });
+

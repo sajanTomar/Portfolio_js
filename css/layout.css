@@ -33,7 +33,7 @@ section {
 }
 
 section:first-child {
-    padding-top: 0;
+    padding-top: 2rem;
 }
 
 /* HEADER — Fixed Full-Width Bar */
