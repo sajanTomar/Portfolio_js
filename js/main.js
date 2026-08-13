@@ -198,6 +198,30 @@ if (typingText && !prefersReducedMotion) {
     typeRole();
 }
 
+// SECTION SCROLL REVEAL (IMPACT CARDS & PRINCIPLES)
+function initScrollReveal() {
+    const revealSections = document.querySelectorAll(".impact");
+
+    if (!revealSections.length) return;
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        revealSections.forEach((section) => observer.observe(section));
+    } else {
+        revealSections.forEach((section) => section.classList.add("is-visible"));
+    }
+}
+
 // SCROLL EVENTS
 window.addEventListener("scroll", handleHeader);
 window.addEventListener("scroll", updateProgressBar);
@@ -208,4 +232,5 @@ window.addEventListener("load", () => {
     handleHeader();
     updateProgressBar();
     updateActiveNavigation();
+    initScrollReveal();
 });
