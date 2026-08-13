@@ -854,7 +854,7 @@ svg {
 .impact {
     position: relative;
     overflow: hidden;
-    padding-block: clamp(2rem, 3.5vw, 3.5rem);
+    padding-block: clamp(3rem, 5vw, 4.5rem);
 }
 
 .impact::before {
@@ -875,24 +875,24 @@ svg {
 .impact__header.text-center {
     text-align: center;
     margin-inline: auto;
-    max-width: 780px;
-    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 .section-label--pill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: .3rem 1.05rem;
+    padding: .35rem 1.15rem;
     border-radius: 100px;
-    font-size: .72rem;
+    font-size: .75rem;
     font-weight: 700;
     letter-spacing: .14em;
     color: #3B82F6;
     background: rgba(59, 130, 246, .08);
     border: 1px solid rgba(59, 130, 246, .24);
     box-shadow: 0 0 16px rgba(59, 130, 246, .12);
-    margin-bottom: .65rem;
+    margin-bottom: .85rem;
 }
 
 .section-label--pill::before {
@@ -901,7 +901,7 @@ svg {
 
 .impact__title {
     margin: 0 auto;
-    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
     line-height: 1.08;
     letter-spacing: -.04em;
     font-weight: 800;
@@ -913,27 +913,27 @@ svg {
 }
 
 .impact__description {
-    margin: .65rem auto 0;
-    max-width: 620px;
+    margin: .85rem auto 0;
+    max-width: 660px;
     color: var(--text-muted);
-    font-size: clamp(.88rem, 1vw, .96rem);
-    line-height: 1.5;
+    font-size: clamp(.92rem, 1.1vw, 1.05rem);
+    line-height: 1.6;
 }
 
 .impact__metrics {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 1.25rem;
 }
 
 .impact-card {
     position: relative;
     display: flex;
     align-items: flex-start;
-    gap: 1.1rem;
-    padding: 1.25rem 1.4rem;
-    border-radius: 18px;
+    gap: 1.25rem;
+    padding: 1.5rem 1.65rem;
+    border-radius: 20px;
     background: rgba(13, 17, 23, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(20px);
@@ -942,18 +942,18 @@ svg {
 }
 
 .impact-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     border-color: rgba(59, 130, 246, 0.38);
     background: rgba(18, 24, 34, 0.85);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 20px rgba(59, 130, 246, 0.08);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35), 0 0 24px rgba(59, 130, 246, 0.08);
 }
 
 .impact-card__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 46px;
-    height: 46px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-bottom: 0;
     flex-shrink: 0;
@@ -992,11 +992,11 @@ svg {
 .impact-card__content {
     display: flex;
     flex-direction: column;
-    gap: .15rem;
+    gap: .2rem;
 }
 
 .impact-card__value {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 800;
     letter-spacing: -.03em;
     line-height: 1.1;
@@ -1022,7 +1022,7 @@ svg {
 }
 
 .impact-card__title {
-    font-size: .95rem;
+    font-size: 1.02rem;
     font-weight: 700;
     color: #FFFFFF;
     margin-bottom: .15rem;
@@ -1030,9 +1030,9 @@ svg {
 }
 
 .impact-card__description {
-    font-size: .82rem;
+    font-size: .86rem;
     color: var(--text-muted);
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .desc-short {
@@ -1058,22 +1058,22 @@ svg {
 .impact__principles {
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
 }
 
 .impact__quote {
     display: flex;
     align-items: center;
-    gap: .85rem;
-    padding: .9rem 1.25rem;
-    border-radius: 14px;
+    gap: 1rem;
+    padding: 1.1rem 1.35rem;
+    border-radius: 16px;
     background: rgba(13, 17, 23, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .impact__quote-mark {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     line-height: 1;
     color: #3B82F6;
     font-weight: 800;
@@ -1082,17 +1082,17 @@ svg {
 
 .impact__quote p {
     margin: 0;
-    font-size: .82rem;
+    font-size: .86rem;
     color: var(--text-light);
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .impact__principle {
     display: flex;
     align-items: center;
-    gap: .75rem;
-    padding: .85rem 1.1rem;
-    border-radius: 14px;
+    gap: .85rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 16px;
     background: rgba(13, 17, 23, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
