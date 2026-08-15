@@ -369,3 +369,11 @@ footer {
     right: -68px;
     top: 23%;
 }
+
+.experience {
+    min-height: auto;
+}
+
+.experience__heading {
+    max-width: 900px;
+}
