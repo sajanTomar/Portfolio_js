@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/techstack.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -1524,7 +1525,181 @@
                     </div>
                 </div>
             </section>
-            <section id="techstack"></section>
+            <section class="techstack" id="techstack">
+                <div class="container">
+                    <div class="techstack__top">
+                        <div class="techstack__header">
+                            <span class="section-label section-label--pill">TECH STACK</span>
+                            <h2 class="techstack__title">
+                                The Tools Behind <br>
+                                <span class="text-gradient">The Work.</span>
+                            </h2>
+                            <p class="techstack__description">
+                                A practical engineering stack built around modern frontend development, backend systems, performance, and reliable delivery.
+                            </p>
+                        </div>
+
+                        <!-- 3D HERO GRAPHIC MOCKUP -->
+                        <div class="techstack__graphic" aria-hidden="true">
+                            <div class="graphic-canvas">
+                                <!-- Floating Tech Badges -->
+                                <div class="floating-badge badge--react">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#61DAFB" stroke-width="2">
+                                        <ellipse cx="12" cy="12" rx="9" ry="3.5"/>
+                                        <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/>
+                                        <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/>
+                                        <circle cx="12" cy="12" r="1.5" fill="#61DAFB"/>
+                                    </svg>
+                                </div>
+                                <div class="floating-badge badge--node">
+                                    <span class="badge-text">node<span class="badge-dot">JS</span></span>
+                                </div>
+                                <div class="floating-badge badge--next">
+                                    <span class="badge-text">NEXT<span class="badge-sub">.JS</span></span>
+                                </div>
+                                <div class="floating-badge badge--ts">
+                                    <span class="badge-ts-box">TS</span>
+                                </div>
+                                <div class="floating-badge badge--db">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2">
+                                        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                                    </svg>
+                                </div>
+
+                                <!-- Isometric Laptop Illustration -->
+                                <div class="isometric-laptop">
+                                    <div class="laptop-screen">
+                                        <div class="code-line line-1"></div>
+                                        <div class="code-line line-2"></div>
+                                        <div class="code-line line-3"></div>
+                                        <div class="code-line line-4"></div>
+                                    </div>
+                                    <div class="laptop-keyboard"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 TECH CATEGORIES GRID -->
+                    <div class="techstack__grid">
+                        <!-- Card 01: Frontend Engineering -->
+                        <div class="tech-card">
+                            <div class="tech-card__top">
+                                <div class="tech-card__badge tech-card__badge--blue">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="16 18 22 12 16 6"/>
+                                        <polyline points="8 6 2 12 8 18"/>
+                                    </svg>
+                                </div>
+                                <div class="tech-card__info">
+                                    <h3 class="tech-card__title">Frontend Engineering</h3>
+                                </div>
+                                <span class="tech-card__num">01</span>
+                            </div>
+                            <p class="tech-card__desc">
+                                Building scalable, responsive interfaces with modern component architecture and type-safe development.
+                            </p>
+                            <div class="tech-card__pills">
+                                <span>React.js</span>
+                                <span>TypeScript</span>
+                                <span>Next.js</span>
+                                <span>JavaScript</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Sass / SCSS</span>
+                                <span>Tailwind CSS</span>
+                                <span>Redux Toolkit</span>
+                                <span>Zustand</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 02: Backend & APIs -->
+                        <div class="tech-card">
+                            <div class="tech-card__top">
+                                <div class="tech-card__badge tech-card__badge--blue">
+                                    <span class="tech-card__api-text">API</span>
+                                </div>
+                                <div class="tech-card__info">
+                                    <h3 class="tech-card__title">Backend &amp; APIs</h3>
+                                </div>
+                                <span class="tech-card__num">02</span>
+                            </div>
+                            <p class="tech-card__desc">
+                                Designing and integrating APIs, backend services, authentication flows, and service-oriented architectures.
+                            </p>
+                            <div class="tech-card__pills">
+                                <span>Node.js</span>
+                                <span>Fastify</span>
+                                <span>Express.js</span>
+                                <span>Laravel</span>
+                                <span>REST APIs</span>
+                                <span>Redis</span>
+                                <span>Prisma ORM</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 03: Data & Infrastructure -->
+                        <div class="tech-card">
+                            <div class="tech-card__top">
+                                <div class="tech-card__badge tech-card__badge--purple">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                                    </svg>
+                                </div>
+                                <div class="tech-card__info">
+                                    <h3 class="tech-card__title">Data &amp; Infrastructure</h3>
+                                </div>
+                                <span class="tech-card__num">03</span>
+                            </div>
+                            <p class="tech-card__desc">
+                                Working with relational databases, containers, deployment workflows, and development infrastructure.
+                            </p>
+                            <div class="tech-card__pills">
+                                <span>MySQL</span>
+                                <span>PostgreSQL</span>
+                                <span>Docker</span>
+                                <span>Git</span>
+                                <span>GitHub Actions</span>
+                                <span>CI / CD</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 04: Performance & Quality -->
+                        <div class="tech-card">
+                            <div class="tech-card__top">
+                                <div class="tech-card__badge tech-card__badge--teal">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                                        <polyline points="17 6 23 6 23 12"/>
+                                    </svg>
+                                </div>
+                                <div class="tech-card__info">
+                                    <h3 class="tech-card__title">Performance &amp; Quality</h3>
+                                </div>
+                                <span class="tech-card__num">04</span>
+                            </div>
+                            <p class="tech-card__desc">
+                                Optimizing real-world frontend performance and maintaining engineering quality through measurement and tooling.
+                            </p>
+                            <div class="tech-card__pills">
+                                <span>Core Web Vitals</span>
+                                <span>LCP</span>
+                                <span>FCP</span>
+                                <span>TBT</span>
+                                <span>Lighthouse</span>
+                                <span>Vite</span>
+                                <span>Webpack</span>
+                                <span>Code Splitting</span>
+                                <span>Lazy Loading</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="contact"></section>
         </main>
 
