@@ -15,6 +15,57 @@
     }
 }
 
+/* HERO CURSOR PARTICLES */
+.hero__stage {
+    position: relative;
+}
+
+.hero-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    box-shadow: 0 0 10px currentColor;
+    animation-name: heroParticleFloat;
+    animation-duration: var(--particle-duration, 600ms);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes heroParticleFloat {
+    0% {
+        opacity: 0.95;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(var(--particle-x), var(--particle-y), 0) scale(0.15);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-particles {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-particles {
+        display: none;
+    }
+}
+
 /* HERO ANIMATIONS */
 .hero__content>* {
     opacity: 0;

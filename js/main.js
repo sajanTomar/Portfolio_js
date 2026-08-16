@@ -87,6 +87,112 @@ const themeToggle = document.querySelector("#themeToggle");
     });
 })();
 
+/* =========================================
+   HERO CURSOR PARTICLES
+   ========================================= */
+
+(function initHeroParticles() {
+    const heroStage = document.querySelector(".hero__stage");
+    const particleContainer = document.querySelector("#heroParticles");
+
+    if (!heroStage || !particleContainer) return;
+
+    const isTouchDevice = window.matchMedia("(hover: none)").matches;
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (isTouchDevice || prefersReducedMotion) return;
+
+    const particleColors = [
+        "#3B82F6",
+        "#60A5FA",
+        "#93C5FD",
+        "#A855F7",
+        "#6366F1"
+    ];
+
+    let lastX = 0;
+    let lastY = 0;
+    let lastParticleTime = 0;
+
+    heroStage.addEventListener("mousemove", (event) => {
+        const currentTime = performance.now();
+
+        if (currentTime - lastParticleTime < 25) {
+            return;
+        }
+
+        const rect = particleContainer.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const distance = Math.hypot(x - lastX, y - lastY);
+
+        if (distance < 5) {
+            return;
+        }
+
+        lastX = x;
+        lastY = y;
+        lastParticleTime = currentTime;
+
+        createParticle(x, y);
+    });
+
+    function createParticle(x, y) {
+        const particle = document.createElement("span");
+
+        particle.className = "hero-particle";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 20 + Math.random() * 40;
+
+        const moveX = Math.cos(angle) * distance;
+        const moveY = Math.sin(angle) * distance;
+
+        const size = 4 + Math.random() * 5;
+        const duration = 500 + Math.random() * 350;
+        const color = particleColors[Math.floor(Math.random() * particleColors.length)];
+
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.backgroundColor = color;
+        particle.style.color = color;
+
+        particle.style.setProperty(
+            "--particle-x",
+            `${moveX}px`
+        );
+
+        particle.style.setProperty(
+            "--particle-y",
+            `${moveY}px`
+        );
+
+        particle.style.setProperty(
+            "--particle-duration",
+            `${duration}ms`
+        );
+
+        particleContainer.appendChild(particle);
+
+        particle.addEventListener("animationend", () => {
+            particle.remove();
+        });
+
+        // Fallback cleanup in case animationend event is skipped
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.remove();
+            }
+        }, duration + 100);
+    }
+})();
+
 // THEME TOGGLE
 const storedTheme = localStorage.getItem("theme");
 
@@ -178,16 +284,27 @@ function updateProgressBar() {
 // ACTIVE NAVIGATION
 function updateActiveNavigation() {
     let currentSection = "";
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-            currentSection = section.id;
-        }
-    });
+
+    // Check if user has scrolled to the bottom of the page
+    const isAtBottom =
+        window.innerHeight + Math.ceil(window.scrollY) >=
+        document.documentElement.scrollHeight - 30;
+
+    if (isAtBottom && sections.length > 0) {
+        // Automatically highlight the last section (#contact) when scrolled to bottom
+        currentSection = sections[sections.length - 1].id;
+    } else {
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 180;
+            const sectionHeight = section.offsetHeight;
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                currentSection = section.id;
+            }
+        });
+    }
 
     navLinks.forEach((link) => {
         link.classList.remove("active");
