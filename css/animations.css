@@ -1,3 +1,21 @@
+/* NAVBAR TEXT SCRAMBLE EFFECT */
+.nav-link {
+    position: relative;
+    display: inline-block;
+    transition: color 0.25s ease;
+}
+
+.nav-link .nav-scramble-text {
+    display: inline-block;
+    min-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-link .nav-scramble-text {
+        transition: none;
+    }
+}
+
 /* HERO ANIMATIONS */
 .hero__content>* {
     opacity: 0;

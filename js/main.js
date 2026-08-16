@@ -9,6 +9,68 @@ const sections = document.querySelectorAll("main section");
 const typingText = document.querySelector("#typingText");
 const themeToggle = document.querySelector("#themeToggle");
 
+/* NAVBAR TEXT TYPING & REWRITING EFFECT */
+(function initNavbarTextScramble() {
+    const navLinks = document.querySelectorAll('.desktop-nav .nav-link');
+    if (!navLinks.length) return;
+
+    const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    const scrambleSymbols = '░▒▓/_<>[]{}#*+!';
+
+    navLinks.forEach((link) => {
+        const originalText = link.textContent.trim();
+        let timer = null;
+        let isHovered = false;
+
+        function playTypingEffect() {
+            if (timer) clearInterval(timer);
+
+            let step = 0;
+            const totalChars = originalText.length;
+            const stepDuration = 65; // Slow, deliberate 65ms per character typing tempo
+
+            timer = setInterval(() => {
+                if (!isHovered) {
+                    clearInterval(timer);
+                    link.textContent = originalText;
+                    return;
+                }
+
+                if (step <= totalChars) {
+                    const revealed = originalText.slice(0, step);
+                    let trailing = '';
+
+                    if (step < totalChars) {
+                        const symbol = scrambleSymbols[Math.floor(Math.random() * scrambleSymbols.length)];
+                        trailing = symbol;
+                    }
+
+                    link.textContent = revealed + trailing;
+                    step++;
+                } else {
+                    clearInterval(timer);
+                    link.textContent = originalText;
+                }
+            }, stepDuration);
+        }
+
+        link.addEventListener('mouseenter', () => {
+            isHovered = true;
+            playTypingEffect();
+        });
+
+        link.addEventListener('mouseleave', () => {
+            isHovered = false;
+            if (timer) clearInterval(timer);
+            link.textContent = originalText;
+        });
+    });
+})();
+
 // THEME TOGGLE
 const storedTheme = localStorage.getItem("theme");
 
