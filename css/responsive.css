@@ -687,7 +687,7 @@
         padding: .25rem .65rem;
     }
 
-    /* Sub-Cards on Mobile */
+    /* Sub-Cards on Mobile & Tablet */
     .exp-card__projects {
         display: flex;
         flex-wrap: nowrap;
@@ -705,6 +705,7 @@
 
     .exp-subcard {
         flex: 0 0 100%;
+        width: 100%;
         min-width: 100%;
         max-width: 100%;
         flex-shrink: 0;
@@ -714,6 +715,15 @@
         border-radius: 14px;
         box-sizing: border-box;
     }
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    .exp-subcard {
+        flex: 0 0 calc((100% - 0.85rem) / 2);
+        width: calc((100% - 0.85rem) / 2);
+        min-width: calc((100% - 0.85rem) / 2);
+        max-width: calc((100% - 0.85rem) / 2);
+    }
+}
 
     .exp-subcard__header {
         margin-bottom: .35rem;

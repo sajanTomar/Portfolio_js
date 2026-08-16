@@ -1397,7 +1397,7 @@ svg {
 .exp-card__projects {
     display: flex;
     flex-wrap: nowrap;
-    gap: 1rem;
+    gap: 0.85rem;
     overflow-x: auto;
     width: 100%;
     max-width: 100%;
@@ -1428,9 +1428,10 @@ svg {
 }
 
 .exp-subcard {
-    flex: 0 0 calc(33.333% - 0.67rem);
-    min-width: 310px;
-    max-width: 340px;
+    flex: 0 0 calc((100% - 1.7rem) / 3);
+    width: calc((100% - 1.7rem) / 3);
+    min-width: calc((100% - 1.7rem) / 3);
+    max-width: calc((100% - 1.7rem) / 3);
     flex-shrink: 0;
     scroll-snap-align: start;
     box-sizing: border-box;
