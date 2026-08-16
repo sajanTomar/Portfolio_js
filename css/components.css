@@ -1396,6 +1396,7 @@ svg {
 /* Bambinos Sub-Cards Horizontal Scrollable Container */
 .exp-card__projects {
     display: flex;
+    flex-wrap: nowrap;
     gap: 1rem;
     overflow-x: auto;
     width: 100%;
@@ -1428,7 +1429,9 @@ svg {
 
 .exp-subcard {
     flex: 0 0 calc(33.333% - 0.67rem);
-    min-width: 280px;
+    min-width: 310px;
+    max-width: 340px;
+    flex-shrink: 0;
     scroll-snap-align: start;
     box-sizing: border-box;
     display: flex;
