@@ -21,6 +21,21 @@ const themeToggle = document.querySelector("#themeToggle");
 
     const scrambleSymbols = '░▒▓/_<>[]{}#*+!';
 
+    function lockWidth(link) {
+        if (!link.dataset.lockedWidth) {
+            const width = link.getBoundingClientRect().width;
+            if (width > 0) {
+                link.style.minWidth = `${Math.ceil(width)}px`;
+                link.dataset.lockedWidth = "true";
+            }
+        }
+    }
+
+    // Pre-lock widths after page load
+    window.addEventListener('load', () => {
+        navLinks.forEach((link) => lockWidth(link));
+    });
+
     navLinks.forEach((link) => {
         const originalText = link.textContent.trim();
         let timer = null;
@@ -59,6 +74,7 @@ const themeToggle = document.querySelector("#themeToggle");
         }
 
         link.addEventListener('mouseenter', () => {
+            lockWidth(link);
             isHovered = true;
             playTypingEffect();
         });

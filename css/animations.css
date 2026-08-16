@@ -1,17 +1,16 @@
-/* NAVBAR TEXT SCRAMBLE EFFECT */
+/* NAVBAR TEXT TYPING & REWRITING EFFECT */
 .nav-link {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+    box-sizing: border-box;
     transition: color 0.25s ease;
 }
 
-.nav-link .nav-scramble-text {
-    display: inline-block;
-    min-width: 100%;
-}
-
 @media (prefers-reduced-motion: reduce) {
-    .nav-link .nav-scramble-text {
+    .nav-link {
         transition: none;
     }
 }
