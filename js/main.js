@@ -522,11 +522,83 @@ window.addEventListener("scroll", updateProgressBar);
 window.addEventListener("scroll", updateActiveNavigation);
 
 // INITIAL STATE
+// EXPERIENCE SUBCARDS AUTO-SCROLL WITH HOVER PAUSE
+function initSubcardAutoScroll() {
+    const projectContainers = document.querySelectorAll(".exp-card__projects");
+
+    projectContainers.forEach((container) => {
+        const parentCard = container.closest(".exp-card") || container;
+        let autoScrollTimer = null;
+        let isHovered = false;
+
+        function scrollNext() {
+            if (isHovered) return;
+
+            const subcards = container.querySelectorAll(".exp-subcard");
+            if (!subcards.length) return;
+
+            const firstCard = subcards[0];
+            const gap = 16;
+            const stepAmount = firstCard.offsetWidth + gap;
+            const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+            if (container.scrollLeft >= maxScrollLeft - 8) {
+                container.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+                container.scrollBy({ left: stepAmount, behavior: "smooth" });
+            }
+        }
+
+        function startTimer() {
+            stopTimer();
+            autoScrollTimer = setInterval(scrollNext, 3200);
+        }
+
+        function stopTimer() {
+            if (autoScrollTimer) {
+                clearInterval(autoScrollTimer);
+                autoScrollTimer = null;
+            }
+        }
+
+        // Pause auto scroll on mouseenter anywhere in parent card container
+        parentCard.addEventListener("mouseenter", () => {
+            isHovered = true;
+            stopTimer();
+        });
+
+        // Resume auto scroll on mouseleave
+        parentCard.addEventListener("mouseleave", () => {
+            isHovered = false;
+            startTimer();
+        });
+
+        // Pause on touch start for mobile
+        container.addEventListener("touchstart", () => {
+            isHovered = true;
+            stopTimer();
+        }, { passive: true });
+
+        // Resume after touch interaction
+        container.addEventListener("touchend", () => {
+            setTimeout(() => {
+                isHovered = false;
+                startTimer();
+            }, 3500);
+        }, { passive: true });
+
+        // Start initial auto scroll
+        startTimer();
+    });
+}
+
+// INITIAL STATE
 window.addEventListener("load", () => {
     handleHeader();
     updateProgressBar();
     updateActiveNavigation();
     initScrollReveal();
     setupImpactReveal();
+    initSubcardAutoScroll();
 });
 

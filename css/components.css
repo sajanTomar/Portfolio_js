@@ -1282,9 +1282,18 @@ svg {
     box-shadow: 0 0 6px #3B82F6;
 }
 
+.timeline-item {
+    min-width: 0;
+}
+
 /* Experience Card Outer Box */
 .exp-card {
     flex: 1;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
     padding: 1.25rem 1.6rem;
     border-radius: 18px;
     background: rgba(13, 17, 23, 0.65);
@@ -1384,19 +1393,48 @@ svg {
     background: rgba(59, 130, 246, 0.08);
 }
 
-/* Bambinos 3 Sub-Cards Grid */
+/* Bambinos Sub-Cards Horizontal Scrollable Container */
 .exp-card__projects {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: .85rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 0.75rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
     margin-top: 1rem;
+    scroll-behavior: smooth;
+}
+
+.exp-card__projects::-webkit-scrollbar {
+    height: 6px;
+}
+
+.exp-card__projects::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+}
+
+.exp-card__projects::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.35);
+    border-radius: 10px;
+}
+
+.exp-card__projects::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.65);
 }
 
 .exp-subcard {
+    flex: 0 0 calc(33.333% - 0.67rem);
+    min-width: 280px;
+    scroll-snap-align: start;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1rem 1.15rem;
+    padding: 1.1rem 1.15rem;
     border-radius: 14px;
     background: rgba(10, 14, 22, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.06);

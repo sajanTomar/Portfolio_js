@@ -689,15 +689,28 @@
 
     /* Sub-Cards on Mobile */
     .exp-card__projects {
-        grid-template-columns: 1fr;
-        gap: .75rem;
+        display: flex;
+        gap: .85rem;
+        overflow-x: auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding-bottom: .6rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
         margin-top: 1.25rem;
+        scroll-behavior: smooth;
     }
 
     .exp-subcard {
+        flex: 0 0 100%;
+        min-width: 100%;
+        max-width: 100%;
+        scroll-snap-align: start;
         min-height: auto;
         padding: 1rem 1.15rem;
         border-radius: 14px;
+        box-sizing: border-box;
     }
 
     .exp-subcard__header {
