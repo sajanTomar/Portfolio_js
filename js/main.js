@@ -193,23 +193,107 @@ const themeToggle = document.querySelector("#themeToggle");
     }
 })();
 
-// THEME TOGGLE
-const storedTheme = localStorage.getItem("theme");
+// THEME STUDIO & COLOR PALETTE CUSTOMIZER
+(function initThemeStudio() {
+    const themeCustomizerBtn = document.querySelector("#themeCustomizerBtn");
+    const themeDrawer = document.querySelector("#themeDrawer");
+    const themeDrawerOverlay = document.querySelector("#themeDrawerOverlay");
+    const themeDrawerCloseBtn = document.querySelector("#themeDrawerCloseBtn");
+    const presetButtons = document.querySelectorAll(".theme-preset-btn");
+    const modeButtons = document.querySelectorAll(".theme-mode-btn");
 
-if (storedTheme) {
-    document.documentElement.setAttribute("data-theme", storedTheme);
-}
+    // Load initial theme and color preset from localStorage
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    const savedColorPreset = localStorage.getItem("colorPreset") || "blue";
 
-if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-        const isLight =
-            document.documentElement.getAttribute("data-theme") === "light";
-        const nextTheme = isLight ? "dark" : "light";
+    applyThemeMode(savedTheme);
+    applyColorPreset(savedColorPreset);
 
-        document.documentElement.setAttribute("data-theme", nextTheme);
-        localStorage.setItem("theme", nextTheme);
+    function applyThemeMode(mode) {
+        if (mode === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+        } else {
+            document.documentElement.removeAttribute("data-theme");
+        }
+        localStorage.setItem("theme", mode);
+        updateModeUI(mode);
+    }
+
+    function applyColorPreset(preset) {
+        document.documentElement.setAttribute("data-color", preset);
+        localStorage.setItem("colorPreset", preset);
+        updatePresetUI(preset);
+    }
+
+    function updateModeUI(mode) {
+        modeButtons.forEach((btn) => {
+            if (btn.dataset.mode === mode) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+    }
+
+    function updatePresetUI(preset) {
+        presetButtons.forEach((btn) => {
+            if (btn.dataset.preset === preset) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+    }
+
+    function openThemeDrawer() {
+        if (!themeDrawer) return;
+        themeDrawer.classList.add("active");
+        themeDrawerOverlay.classList.add("active");
+        themeDrawer.setAttribute("aria-hidden", "false");
+    }
+
+    function closeThemeDrawer() {
+        if (!themeDrawer) return;
+        themeDrawer.classList.remove("active");
+        themeDrawerOverlay.classList.remove("active");
+        themeDrawer.setAttribute("aria-hidden", "true");
+    }
+
+    if (themeCustomizerBtn) {
+        themeCustomizerBtn.addEventListener("click", openThemeDrawer);
+    }
+
+    if (themeDrawerCloseBtn) {
+        themeDrawerCloseBtn.addEventListener("click", closeThemeDrawer);
+    }
+
+    if (themeDrawerOverlay) {
+        themeDrawerOverlay.addEventListener("click", closeThemeDrawer);
+    }
+
+    presetButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const preset = btn.dataset.preset;
+            applyColorPreset(preset);
+        });
     });
-}
+
+    modeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const mode = btn.dataset.mode;
+            applyThemeMode(mode);
+        });
+    });
+
+    // Theme Toggle Header Button sync
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            const isLight = document.documentElement.getAttribute("data-theme") === "light";
+            const nextTheme = isLight ? "dark" : "light";
+            applyThemeMode(nextTheme);
+        });
+    }
+})();
 
 // MOBILE NAVIGATION
 function openMenu() {
