@@ -202,7 +202,7 @@ const themeToggle = document.querySelector("#themeToggle");
     const presetButtons = document.querySelectorAll(".theme-preset-btn");
     const modeButtons = document.querySelectorAll(".theme-mode-btn");
 
-    // Load initial theme and color preset from localStorage
+    // Default to original dark theme and blue preset
     const savedTheme = localStorage.getItem("theme") || "dark";
     const savedColorPreset = localStorage.getItem("colorPreset") || "blue";
 
@@ -212,17 +212,23 @@ const themeToggle = document.querySelector("#themeToggle");
     function applyThemeMode(mode) {
         if (mode === "light") {
             document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
         } else {
             document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "dark");
         }
-        localStorage.setItem("theme", mode);
-        updateModeUI(mode);
+        updateModeUI(mode === "light" ? "light" : "dark");
     }
 
     function applyColorPreset(preset) {
-        document.documentElement.setAttribute("data-color", preset);
-        localStorage.setItem("colorPreset", preset);
-        updatePresetUI(preset);
+        if (preset && preset !== "blue") {
+            document.documentElement.setAttribute("data-color", preset);
+            localStorage.setItem("colorPreset", preset);
+        } else {
+            document.documentElement.removeAttribute("data-color");
+            localStorage.setItem("colorPreset", "blue");
+        }
+        updatePresetUI(preset || "blue");
     }
 
     function updateModeUI(mode) {
